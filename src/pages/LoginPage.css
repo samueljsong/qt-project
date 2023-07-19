@@ -1,0 +1,7 @@
+
+.login-container{
+    display: flex;
+    place-self: center;
+    height: 30rem;
+    width: 23rem;
+}

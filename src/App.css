@@ -1,0 +1,43 @@
+:root{
+  /* Dark Theme */
+  --dark-background: #0c0a0d;
+  --dark-card-background: rgba(128, 126, 153, 0.226);
+  --dark-text: #ccc7cd;
+
+  /* Light Theme */
+  --light-background: #f3f3f3;
+  --light-card-background: #ffffff;
+  --light-text: #2c2c2c;
+
+  /* Default */
+  --current-background: var(--dark-background);
+  --current-text: var(--current-text);
+}
+
+/* Global Class Names */
+
+*{
+  margin: 0;
+}
+
+.dark{
+  background-color: var(--dark-background);
+  color: var(--dark-text);
+}
+
+.light{
+  background-color: var(--light-background);
+  color: var(--light-text);
+}
+
+.card{
+  background-color: var(--dark-card-background);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+.container{
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+}
