@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
 import LoginPage from './pages/LoginPage'
+import LandingPage from './pages/LandingPage'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -32,10 +34,17 @@ function App() {
   };
 
   return (
-    <div className={`container ${mode}`}>
-      <Navbar theme={mode} changeTheme={themeHandler}></Navbar>
-      <LoginPage theme={mode}></LoginPage>
-    </div>
+    <>
+      <div className={`container ${mode}`}>
+        <Navbar theme={mode} changeTheme={themeHandler}></Navbar>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<LoginPage theme={mode}/>}/>
+            <Route path='/landing' element={<LandingPage/>}/>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
   )
 }
 
