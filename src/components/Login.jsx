@@ -13,8 +13,8 @@ const Login = (props) => {
             <div className='circle'></div>
             <div className="triangle"></div> */}
             <div className={`login-card-container ${props.theme}-card`}>
-                <h1 className='login-title'>Quiet Time</h1>
-                <p>Log into Quiet Time</p>
+                <h3 className='login-title'>Sign in to your account</h3>
+                <p>Daily Quit Time</p>
                 <form className='login-form' action="">
                     <input className={`${props.theme}-input`} type="email" required placeholder='Email'/>
                     <input className={`${props.theme}-input`} type="password" placeholder='Password' required />

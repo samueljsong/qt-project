@@ -1,0 +1,123 @@
+@media only screen and (max-width: 480px){
+
+    .nav-container{
+        position: fixed;
+        height: 4rem;
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 5;
+    }
+    
+    .logo{
+        line-height: 0;
+        color: #b19cd9;
+        margin-left: 1rem;
+    }
+    
+    .light-nav{
+        background-color: var(--light-card-background);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);
+    }
+    
+    .dark-nav{
+        box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1),0 1px 2px -1px rgba(255, 255, 255, 0.1);
+    }
+    
+    /* CSS for hamburger menu in mobile mode */
+    .nav-hamburger{
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        margin-right: 1rem;
+        opacity: 100;
+        transition: all 1s ease 1s;
+    }
+    
+    .nav-line{
+        height: 0.1rem;
+        width: 1rem;
+        border-radius: 50px;
+        background-color: #b19cd9;
+    }
+
+    /* CSS for nav elements in tablet mode */
+    .nav-elements{
+        display: none;
+    }
+
+    
+}
+
+@media only screen and (min-width: 481px){
+
+    .nav-container{
+        position: fixed;
+        height: 4rem;
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 5;
+    }
+    
+    .logo{
+        line-height: 0;
+        color: #b19cd9;
+        margin-left: 1rem;
+    }
+    
+    .light-nav{
+        background-color: var(--light-card-background);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);
+    }
+    
+    .dark-nav{
+        box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1),0 1px 2px -1px rgba(255, 255, 255, 0.1);
+    }
+    
+    /* CSS for hamburger menu in mobile mode */
+    .nav-hamburger{
+        display: none;
+        flex-direction: column;
+        gap: 0.2rem;
+        margin-right: 1rem;
+    }
+    
+    .nav-line{
+        display: none;
+        height: 0.1rem;
+        width: 1rem;
+        border-radius: 50px;
+        background-color: #b19cd9;
+    }
+
+    /* CSS for nav elements in tablet mode */
+    .nav-elements{
+        display: flex;
+        align-items: center;
+        opacity: 100;
+        gap: 1rem;
+        margin-right: 1rem;
+    }
+
+    a{
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--light-card-text);
+    }
+
+    .nav-button{
+        height: 2.5rem;
+        border-radius: 5px;
+    }
+}
+
+.change-theme-icon{
+    width: 1.5rem;
+}
