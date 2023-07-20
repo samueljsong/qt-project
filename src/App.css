@@ -63,6 +63,11 @@
   border: none;
 }
 
+/* small text */
+.small-font{
+  font-size: 0.8em;
+}
+
 
 .container{
   display: grid;

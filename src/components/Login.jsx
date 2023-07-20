@@ -26,6 +26,7 @@ const Login = (props) => {
                     <p className='login-or-text'>or</p>
                     <span className='line'></span>
                 </div>
+                <p className='small-font'>Don't have an account?</p>
                 <button className='create-new-account-button'
                 onClick={props.switchToSignup}>Create new account</button>
             </div>

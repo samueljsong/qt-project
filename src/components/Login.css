@@ -33,7 +33,7 @@
     }
 
     .login-card-container{
-        height: 28rem;
+        height: 30rem;
         width: 320px;
         display: flex;
         flex-direction: column;
@@ -131,7 +131,7 @@
 
 
     .login-card-container{
-        height: 28rem;
+        height: 30rem;
         width: 470px;
         display: flex;
         flex-direction: column;
