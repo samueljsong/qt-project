@@ -5,8 +5,10 @@ import moon from '../assets/moon.png'
 
 const Navbar = (props) => {
 
+    /* States */
+    const [currentImage, setCurrentImage] = useState(sun);  // Image for theme
+
     /* Login for changing themes */
-    const [currentImage, setCurrentImage] = useState(sun);
     const onChangeThemeHandler = () => {
         if (currentImage === sun){
             setCurrentImage(moon);
@@ -23,7 +25,7 @@ const Navbar = (props) => {
 
     return (
         <div className={`nav-container ${props.theme}-nav`}>
-            <h1 className='logo'>QT</h1>
+            <h1 className='logo'>QuTi</h1>
             <div className='nav-hamburger'>
                 <span className='nav-line'></span>
                 <span className='nav-line'></span>
@@ -32,9 +34,7 @@ const Navbar = (props) => {
             <div className='nav-elements'>
                 <a href="">About</a>
                 <a href="">Sign-in</a>
-                
                 <img className='change-theme-icon' onClick={onChangeThemeHandler} src={currentImage} alt="" />
-                
                 <button className='button nav-button'>Get Started</button>
             </div>
         </div>
