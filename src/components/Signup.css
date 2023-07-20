@@ -33,7 +33,7 @@
     }
 
     .signup-card-container{
-        height: 45rem;
+        height: 40rem;
         width: 320px;
         display: flex;
         flex-direction: column;
@@ -247,4 +247,9 @@
         transition: all 0.1s ease-in 0s;
     }
 
+}
+
+
+.already-have-an-account{
+    font-size: 0.8em;
 }

@@ -9,9 +9,19 @@ function App() {
   const [mode, setMode] = useState("light")
   const [isDark, setDarkMode] = useState(true);
 
+  /* Makes sure that background is always there */
+  const changeBodyBackground = () => {
+    if (isDark){
+      document.body.style = "background-color: #eae7e7;"
+    }else{
+      document.body.style = "background-color: #1e1f22;"
+    }
+  }
+
 
   /* onClick Handlers */
   const themeHandler = () => {
+    changeBodyBackground();
     if(isDark){
       setMode("light");
       setDarkMode(false);

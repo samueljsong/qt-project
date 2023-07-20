@@ -21,6 +21,7 @@ const Signup = (props) => {
                     <p className='login-or-text'>or</p>
                     <span className='line'></span>
                 </div>
+                <p className='already-have-an-account'>Already have an account?</p>
                 <button className='create-new-account-button'
                 onClick={props.switchToLogin}>Sign in</button>    
             </div>
