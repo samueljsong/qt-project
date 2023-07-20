@@ -1,6 +1,6 @@
 :root{
   /* Dark Theme */
-  --dark-background: #0c0a0d;
+  --dark-background: #1e1f22;
   --dark-card-background: rgba(128, 126, 153, 0.226);
   --dark-text: #ffffff;
 
@@ -43,7 +43,7 @@
   background-color: var(--dark-card-background);
   backdrop-filter: blur(10px);
   border-radius: 10px;
-  box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1),0 1px 2px -1px rgba(255, 255, 255, 0.1);
 }
 
 .container{

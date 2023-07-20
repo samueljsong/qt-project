@@ -22,6 +22,7 @@ function App() {
 
   return (
     <div className={`container ${mode}`}>
+      <div className="square"></div>
       <LoginPage theme={mode}></LoginPage>
     </div>
   )
