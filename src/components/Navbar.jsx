@@ -41,9 +41,9 @@ const Navbar = (props) => {
 
     return (
         <>
-            <div className={`${hamburgerClass}`} onClick={onHamburgerClickHandler}>
+            {/* <div className={`${hamburgerClass}`} onClick={onHamburgerClickHandler}>
                 <div className={`hamburger-menu ${props.theme}`}></div>
-            </div>
+            </div> */}
 
 
             <div className={`nav-container ${props.theme}-nav`}>
