@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './Login.css';
 
 const Login = (props) => {
@@ -25,7 +26,8 @@ const Login = (props) => {
                     <p className='login-or-text'>or</p>
                     <span className='line'></span>
                 </div>
-                <button className='create-new-account-button'>Create new account</button>
+                <button className='create-new-account-button'
+                onClick={props.switchToSignup}>Create new account</button>
             </div>
         </div>
     )

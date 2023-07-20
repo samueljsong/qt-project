@@ -110,14 +110,17 @@
         text-decoration: none;
         font-weight: 300;
         color: var(--light-card-text);
+        
     }
 
     .nav-button{
         height: 2.5rem;
         border-radius: 5px;
+        cursor: pointer;
     }
 }
 
 .change-theme-icon{
     width: 1.5rem;
+    cursor: pointer;
 }
