@@ -6,7 +6,7 @@ const Signup = (props) => {
         <div className='login-container'>
             <div className={`signup-card-container ${props.theme}-card`}>
                 <h3 className='login-title'>Create an account</h3>
-                <p>Daily Quit Time</p>
+                <p>Daily Quite Time</p>
                 <form className='login-form' action="">
                     <label htmlFor="username">Username</label>
                     <input id='username' className={`${props.theme}-input`} type="text" placeholder='Username' required/>
