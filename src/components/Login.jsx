@@ -9,9 +9,9 @@ const Login = (props) => {
 
     return (
         <div className='login-container'>
-            <div className='square'></div>
+            {/* <div className='square'></div>
             <div className='circle'></div>
-            <div className="triangle"></div>
+            <div className="triangle"></div> */}
             <div className={`login-card-container ${props.theme}-card`}>
                 <h1 className='login-title'>Quiet Time</h1>
                 <p>Log into Quiet Time</p>
