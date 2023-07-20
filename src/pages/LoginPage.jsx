@@ -1,11 +1,12 @@
 import "./LoginPage.css"
+import Login from "../components/Login";
 
-const LoginPage = () => {
+const LoginPage = (props) => {
 
     return (
         
-        <div className="login-container card">
-            <h1>Welcome</h1>
+        <div className={`login-page-container`}>
+            <Login theme={props.theme}></Login>
         </div>
         
     )

@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className={`container ${mode}`}>
-      <LoginPage></LoginPage>
+      <LoginPage theme={mode}></LoginPage>
     </div>
   )
 }

@@ -14,10 +14,12 @@
   --current-text: var(--current-text);
 }
 
+
 /* Global Class Names */
 
 *{
   margin: 0;
+  font-family: 'Roboto Mono';
 }
 
 .dark{
