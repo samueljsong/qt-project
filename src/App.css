@@ -2,11 +2,11 @@
   /* Dark Theme */
   --dark-background: #0c0a0d;
   --dark-card-background: rgba(128, 126, 153, 0.226);
-  --dark-text: #ccc7cd;
+  --dark-text: #ffffff;
 
   /* Light Theme */
   --light-background: #f3f3f3;
-  --light-card-background: #ffffff;
+  --light-card-background: #ffffff3d;
   --light-text: #2c2c2c;
 
   /* Default */
@@ -32,10 +32,18 @@
   color: var(--light-text);
 }
 
-.card{
+.light-card{
+  background-color: var(--light-card-background);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);
+}
+
+.dark-card{
   background-color: var(--dark-card-background);
   backdrop-filter: blur(10px);
   border-radius: 10px;
+  box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.5),0 1px 2px -1px rgba(255, 255, 255, 0.1);
 }
 
 .container{
