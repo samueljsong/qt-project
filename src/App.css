@@ -67,6 +67,6 @@
 
 .container{
   display: grid;
-  height: auto;
+  height: 100vh;
   width: 100vw;
 }

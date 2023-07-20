@@ -42,7 +42,7 @@
         justify-content: center;
         z-index: 2;
         transition: all 0.3s ease 0s;
-        margin-top: 8rem;
+        margin-top: 4rem;
     }
 
     .login-title{
