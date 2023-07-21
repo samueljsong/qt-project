@@ -14,7 +14,7 @@ function App() {
   /* Makes sure that background is always there */
   const changeBodyBackground = () => {
     if (isDark){
-      document.body.style = "background-color: #eae7e7;"
+      document.body.style = "background-color: #f3f1f1;"
     }else{
       document.body.style = "background-color: #313338;"
     }
