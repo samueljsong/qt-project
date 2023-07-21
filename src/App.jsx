@@ -16,7 +16,7 @@ function App() {
     if (isDark){
       document.body.style = "background-color: #eae7e7;"
     }else{
-      document.body.style = "background-color: #1e1f22;"
+      document.body.style = "background-color: #313338;"
     }
   }
 
@@ -40,7 +40,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<LoginPage theme={mode}/>}/>
-            <Route path='/landing' element={<LandingPage/>}/>
+            <Route path='/landing' element={<LandingPage theme={mode}/>}/>
           </Routes>
         </BrowserRouter>
       </div>

@@ -68,6 +68,10 @@
   font-size: 0.8em;
 }
 
+.spacing{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 
 .container{
   display: grid;
