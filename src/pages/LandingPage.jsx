@@ -43,7 +43,7 @@ const LandingPage = (props) => {
 
             </div>
             <div className='middle-section'>
-                <div className='todays-message-container'>
+                <div className={`todays-message-container`}>
                     <p>Today's message is</p>
                     <p className='bible-verse'>Matthew 1:1-24</p>
                     <button className='button post-button'>Post your thoughts</button>
