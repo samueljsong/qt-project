@@ -36,6 +36,14 @@
         margin-bottom: 4rem;
     }
 
+    .passage-section{
+        display: none;
+    }
+
+    .profile-section{
+        display: none;
+    }
+
 }
 
 @media only screen and (min-width: 481px){
@@ -78,7 +86,11 @@
     }
 
     .profile-section{
-        display: hidden;
+        display: none;
+    }
+
+    .passage-section{
+        display: none;
     }
 
 }
@@ -99,6 +111,7 @@
     }
 
     .profile-section{
+        display: block;
         grid-row-start: 1;
         grid-row-end: 2;
         grid-column-start: 1;
@@ -106,7 +119,7 @@
         justify-self: center;
         width: 90%;
         height: 20rem;
-        transition: background-color 0.3s ease 0s;
+
     }
 
     .middle-section{
@@ -120,16 +133,29 @@
     }
 
 
-    .friends-section{
+    .passage-section{
+        display: flex;
+        flex-direction: column;
         margin-top: 2rem;
         grid-row-start: 2;
         grid-row-end: 3;
         grid-column-start: 1;
         grid-column-end: 2;
         width: 90%;
-        height: 30rem;
+        height: 25rem;
         justify-self: center;
-        transition: background-color 0.3s ease 0s;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .verses{
+        height: 90%;
+        overflow-y: scroll;
+        width: 90%;
+        gap: 1rem;
+        padding-right: 1rem;
+        margin-bottom: 1rem;
     }
 
 }
@@ -149,6 +175,7 @@
     }
 
     .profile-section{
+        display: block;
         grid-row-start: 1;
         grid-row-end: 3;
         grid-column-start: 1;
@@ -156,7 +183,6 @@
         justify-self: center;
         width: 90%;
         height: 20rem;
-        transition: background-color 0.3s ease 0s;
     }
 
     .middle-section{
@@ -170,16 +196,28 @@
     }
 
 
-    .friends-section{
+    .passage-section{
+        display: flex;
+        flex-direction: column;
         margin-top: 0;
         grid-row-start: 1;
         grid-row-end: 3;
         grid-column-start: 3;
         grid-column-end: 4;
         width: 90%;
-        height: 40rem;
+        height: 50rem;
         justify-self: center;
-        transition: background-color 0.3s ease 0s;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .verses{
+        height: 90%;
+        overflow-y: scroll;
+        width: 90%;
+        gap: 1rem;
+        padding-right: 1rem;
     }
     
 }
