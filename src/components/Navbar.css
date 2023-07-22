@@ -54,7 +54,11 @@
 
     /* hamburger */
     .invisible{
-        display: hidden;
+        display: none;
+    }
+
+    .slideout{
+        animation: slideOut 0.3s;
     }
 
     .hamburger-container{
@@ -63,17 +67,77 @@
         height: 100%;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.568);
-        opacity: 1;
+        animation: hamburgerBackground 0.3s;
     }
 
     .hamburger-menu {
+        position: absolute;
         height: 100%;
-        width: 80%;
+        width: 320px;
         z-index: 7;
+        animation: slideIn 0.3s;
+        display: flex;
+        flex-direction: column;
     }
 
+    @keyframes hamburgerBackground{
+        0%  {opacity: 0;}
+        100% {opacity: 1;}
+    }
 
+    @keyframes hamburgerBackgroundClose{
+        0%  {opacity: 1;}
+        100% {opacity: 0;}
+    }
 
+    @keyframes slideIn{
+        0%      {translate: -320px;}
+        100%    {translate: 0px;}
+    }
+
+    @keyframes slideOut{
+        0%      {translate:0px;}
+        100%    {translate: -320px;}
+    }
+
+    .hamburger-head{
+    
+        height: 4rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .hamburger-logo{
+        color: #b19cd9;
+        margin-left: 0.5rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .hamburger-elements{
+        gap: 1rem;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+
+    .hamburger-line{
+        height: 1px;
+        width: 93%;
+        background-color: #b19cd9;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        align-self: center;
+    }
+
+    .hamburger-settings{
+        gap: 1rem;
+        margin-left: 1rem;
+    }
+
+    .hamburger-theme-icon{
+        width: 1rem;
+    }
+
+    
     
 }
 
@@ -124,6 +188,14 @@
         background-color: #b19cd9;
     }
 
+    .invisible{
+        display: none;
+    }
+
+    .hamburger-menu{
+        display: none;
+    }
+
     /* CSS for nav elements in tablet mode */
     .nav-elements{
         display: flex;
@@ -151,3 +223,4 @@
     width: 1.5rem;
     cursor: pointer;
 }
+

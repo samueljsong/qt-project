@@ -8,7 +8,8 @@ const Navbar = (props) => {
     /* States */
     const [currentImage, setCurrentImage] = useState(sun);  // Image for theme
     const [hamburgerActive, setHamburgerActive] = useState(false);
-    const [hamburgerClass, setHamburgerClass] = useState("hamburger-container invisible");
+    const [hamburgerContainerClass, setHamburgerContainerClass] = useState("hamburger-container");
+    const [hamburgerMenuClass, setHamburgerMenuClass] = useState("hamburger-menu")
 
     /* Login for changing themes */
     const onChangeThemeHandler = () => {
@@ -32,18 +33,37 @@ const Navbar = (props) => {
 
     useEffect(() => {
         if(hamburgerActive === true){
-            setHamburgerClass("hamburger-container")
+            setHamburgerContainerClass("hamburger-container")
+            setHamburgerMenuClass("hamburger-menu")
         }else{
-            setHamburgerClass("hamburger-container invisible")
+            setHamburgerContainerClass("invisible")
+            setHamburgerMenuClass("invisible")
         }
     },[hamburgerActive])
 
 
     return (
         <>
-            {/* <div className={`${hamburgerClass}`} onClick={onHamburgerClickHandler}>
-                <div className={`hamburger-menu ${props.theme}`}></div>
-            </div> */}
+            <div className={`${hamburgerContainerClass}`} onClick={onHamburgerClickHandler}>
+                
+            </div>
+
+            <div className={`${hamburgerMenuClass} ${props.theme}`}>
+                    <div className='hamburger-head'>
+                        <h1 className='hamburger-logo'>QuTi</h1>
+                    </div>
+                    <div className='flexboxCol hamburger-elements'>
+                        <a className={`${props.theme}`} href="">Home</a>
+                        <a className={`${props.theme}`} href="">Friends</a>
+                        <a className={`${props.theme}`} href="">About</a>
+                    </div>
+                    <div className='hamburger-line'></div>
+                    <div className='flexboxCol hamburger-settings'>
+                        <a className={`${props.theme}`} href="">Get started</a>
+                        <div className={`${props.theme}`} onClick={onChangeThemeHandler}><img className='hamburger-theme-icon' src={currentImage} alt='nothing' /> Mode</div>
+                        <a className={`${props.theme}`} href="">Sign out</a>
+                    </div>
+                </div>
 
 
             <div className={`nav-container ${props.theme}-nav`}>
