@@ -32,7 +32,6 @@ const Navbar = (props) => {
     const onChangeThemeHandler = () => {
         if (currentImage === sun){
             setCurrentImage(moon);
-
             setSignoutSvg(w_signout);
             setFriendsSvg(w_friends);
             setHomeSvg(w_home);
@@ -40,7 +39,6 @@ const Navbar = (props) => {
             setProfileSvg(w_profile);
         }else{
             setCurrentImage(sun);
-
             setSignoutSvg(b_signout);
             setFriendsSvg(b_friends);
             setHomeSvg(b_home);
