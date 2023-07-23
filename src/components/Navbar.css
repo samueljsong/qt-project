@@ -217,6 +217,16 @@
         border-radius: 5px;
         cursor: pointer;
     }
+
+    .nav-element-desktop{
+        display: flex;
+        align-items: center;
+        height: 3rem;
+    }
+
+    
+
+    
 }
 
 .change-theme-icon{

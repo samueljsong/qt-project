@@ -24,13 +24,10 @@ function getBible (setPassage, setPassageVerse) {
  * @returns A String:   ID used to fetch the passage.
  */
 function getRandomBookAndChapterID(bible){
-    console.log(bible)
+
     const BOOK_NUMBER = getRandomInt(66)
     const BOOK_CHAPTERS = bible[BOOK_NUMBER].chapters;
-    console.log(BOOK_CHAPTERS)
-    console.log("BOOK NUMBER: " + BOOK_NUMBER)
     const CHAPTER_NUMBER = getRandomInt(BOOK_CHAPTERS.length)
-    console.log("CHAPTER NUMBER: " + CHAPTER_NUMBER)
     const CHAPTER_ID = BOOK_CHAPTERS[CHAPTER_NUMBER].id
     return CHAPTER_ID;
 }
@@ -95,8 +92,6 @@ function formatJsonData(content) {
 function fixJsonData(arr){
     const result = [];
 
-    console.log(arr)
-
     for (let i = 0; i < arr.length; i++){
         if(i > 0){
             
@@ -112,7 +107,6 @@ function fixJsonData(arr){
         }
     }
 
-    console.log(result)
     return result;
 }
 
