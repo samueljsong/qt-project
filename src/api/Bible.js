@@ -2,9 +2,6 @@ const baseURL = "api.scripture.api.bible"
 const API_KEY = '5656558ede273b4cc2dd9dc6a8aa3250'
 const BIBLE_ID = '06125adad2d5898a-01'
 const getBooksUrl = `https://api.scripture.api.bible/v1/bibles/${BIBLE_ID}/books?include-chapters=true&include-chapters-and-sections=true`
-const tempPassage = `https://api.scripture.api.bible/v1/bibles/${BIBLE_ID}/passages/MAT.1?content-type=json&include-notes=false&include-titles=true&include-chapter-numbers=true&include-verse-numbers=true&include-verse-spans=false&use-org-id=false`
-
-const testURL = `https://api.scripture.api.bible/v1/bibles/${BIBLE_ID}/search?query=`
 
 function getBible (setPassage, setPassageVerse) {
 
@@ -28,11 +25,11 @@ function getBible (setPassage, setPassageVerse) {
  */
 function getRandomBookAndChapterID(bible){
     console.log(bible)
-    const BOOK_NUMBER = (Math.random() * 66).toFixed(0) - 1
+    const BOOK_NUMBER = getRandomInt(66)
     const BOOK_CHAPTERS = bible[BOOK_NUMBER].chapters;
     console.log(BOOK_CHAPTERS)
     console.log("BOOK NUMBER: " + BOOK_NUMBER)
-    const CHAPTER_NUMBER = (Math.random() * (BOOK_CHAPTERS.length)).toFixed(0)
+    const CHAPTER_NUMBER = getRandomInt(BOOK_CHAPTERS.length)
     console.log("CHAPTER NUMBER: " + CHAPTER_NUMBER)
     const CHAPTER_ID = BOOK_CHAPTERS[CHAPTER_NUMBER].id
     return CHAPTER_ID;
@@ -56,11 +53,12 @@ function getPassage(ID, setPassage, setPassageVerse) {
         }
     )
         .then(response => response.json())
-        .then(json => {
-            console.log(json.data)                              // verses are not correct fix formatJsonData
-            setPassage(json.data.reference)
-            setPassageVerse(formatJsonData(json.data.content))
-        });
+        .then(json => json.data)
+        .then(data => {
+                console.log(data)                 
+                setPassage(data.reference)
+                setPassageVerse(fixJsonData(formatJsonData(data.content)))
+        })     
 }
 
 
@@ -76,10 +74,11 @@ function formatJsonData(content) {
             if(j % 2 !== 0){
                 arr.push(
                     {
-                        verse: arr.length + 1,
-                        text: content[i].items[j].text
+                        text: content[i].items[j].text,
+                        id: content[i].items[j].attrs.verseId
                     }
                 );
+                
             }
         }
     }
@@ -88,6 +87,39 @@ function formatJsonData(content) {
 }
 
 
+/**
+ * Fixes the Data from fetch API to link the same verses together.
+ * @param {arr} arr 
+ * @returns result: array of verse objects.
+ */
+function fixJsonData(arr){
+    const result = [];
 
+    console.log(arr)
+
+    for (let i = 0; i < arr.length; i++){
+        if(i > 0){
+            
+            if(result[result.length-1].id === arr[i].id){
+                result[result.length-1].text += arr[i].text
+            }else{
+                result.push(arr[i])
+                result[result.length - 1].verse = result.length;
+            }
+        }else{
+            result.push(arr[i])
+            result[result.length - 1].verse = result.length;
+        }
+    }
+
+    console.log(result)
+    return result;
+}
+
+
+/* UTILITY FUNCTION */
+function getRandomInt(max){
+    return Math.floor(Math.random() * max);
+}
 
 export { getBible }

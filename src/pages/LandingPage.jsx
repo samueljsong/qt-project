@@ -94,7 +94,7 @@ const LandingPage = (props) => {
                 <div className='flexboxCol verses'>
                     {
                         props.passageVerse.map(verse => {
-                            return <p className='small-font'><span className='purple'>{verse.verse}.</span> {verse.text}</p>
+                            return <p className='small-font' key={crypto.randomUUID()}><span className='purple'>{verse.verse}.</span> {verse.text}</p>
                         })
                     }
                 </div>
