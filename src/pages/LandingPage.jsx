@@ -4,6 +4,7 @@ import pic1 from '../assets/asdf.jpg'
 import pic2 from '../assets/dfdfd.jpg'
 import pic3 from '../assets/ss.jpg'
 import book from '../assets/nav-icons/whitebook.svg'
+import close from '../assets/nav-icons/whiteclose.svg'
 import { useEffect, useState } from 'react'
 
 const LandingPage = (props) => {
@@ -60,8 +61,10 @@ const LandingPage = (props) => {
     return(
         <>
             <div className={backdropClass} onClick={showMobilePassageHandler}></div>
-            <div className={`${mobilePassageClass}`}>
-                <p className='bible-verse'>{props.passage}</p>
+            <div className={`${mobilePassageClass} ${props.theme}-card`}>
+                <p className='bible-verse'>{props.passage} 
+                    <span onClick={showMobilePassageHandler} className='close-button'><img className='close-icon' src={close} alt="" /></span>
+                </p>
                 <div className='flexboxCol verses'>
                     {
                         props.passageVerse.map(verse => {
