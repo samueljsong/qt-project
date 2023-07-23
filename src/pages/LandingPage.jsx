@@ -62,7 +62,7 @@ const LandingPage = (props) => {
         <>
             <div className={backdropClass} onClick={showMobilePassageHandler}>
                 <div className={`${mobilePassageClass} ${props.theme}-card`}>
-                    <p className='bible-verse'>{props.passage} 
+                    <p className='bible-verse passage-verse'>{props.passage} 
                         <span onClick={showMobilePassageHandler} className='close-button'><img className='close-icon' src={close} alt="" /></span>
                     </p>
                     <div className='flexboxCol verses'>
