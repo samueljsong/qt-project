@@ -60,17 +60,18 @@ const LandingPage = (props) => {
 
     return(
         <>
-            <div className={backdropClass} onClick={showMobilePassageHandler}></div>
-            <div className={`${mobilePassageClass} ${props.theme}-card`}>
-                <p className='bible-verse'>{props.passage} 
-                    <span onClick={showMobilePassageHandler} className='close-button'><img className='close-icon' src={close} alt="" /></span>
-                </p>
-                <div className='flexboxCol verses'>
-                    {
-                        props.passageVerse.map(verse => {
-                            return <p className='small-font' key={crypto.randomUUID()}><span className='purple'>{verse.verse}.</span> {verse.text}</p>
-                        })
-                    }
+            <div className={backdropClass} onClick={showMobilePassageHandler}>
+                <div className={`${mobilePassageClass} ${props.theme}-card`}>
+                    <p className='bible-verse'>{props.passage} 
+                        <span onClick={showMobilePassageHandler} className='close-button'><img className='close-icon' src={close} alt="" /></span>
+                    </p>
+                    <div className='flexboxCol verses'>
+                        {
+                            props.passageVerse.map(verse => {
+                                return <p className='small-font' key={crypto.randomUUID()}><span className='purple'>{verse.verse}.</span> {verse.text}</p>
+                            })
+                        }
+                    </div>
                 </div>
             </div>
 
