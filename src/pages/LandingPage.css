@@ -104,7 +104,7 @@
         padding-right: 0.5rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        animation: slideIn 0.3s;
+        animation: hamburgerBackground 0.3s;
         border-radius: 5px;
     }
 
@@ -229,7 +229,7 @@
         padding-right: 0.5rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
-        animation: slideIn 0.3s;
+        animation: hamburgerBackground 0.3s;
         border-radius: 5px;
     }
 
