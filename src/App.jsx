@@ -32,7 +32,7 @@ function App() {
       setDarkMode(false);
     }else{
       setMode("dark");
-      setDarkMode("true");
+      setDarkMode(true);
     }
   };
 
