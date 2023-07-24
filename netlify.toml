@@ -2,6 +2,6 @@
 external_node_modules = ["express"]
 node_bundler = "esbuild"
 [[redirects]]
-from = "/api/*"
+from = "/*"
 to = "index.html"
 status = 200
