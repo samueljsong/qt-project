@@ -15,7 +15,7 @@ const Login = (props) => {
             <div className="triangle"></div> */}
             <div className={`login-card-container ${props.theme}-card`}>
                 <h3 className='login-title'>Sign in to your account</h3>
-                <p>Daily Quite Time</p>
+                <p>Daily Quiet Time</p>
                 <form className='login-form' action="/landing" method='get'>
                     <input className={`${props.theme}-input`} type="email" required placeholder='Email'/>
                     <input className={`${props.theme}-input`} type="password" placeholder='Password' required />

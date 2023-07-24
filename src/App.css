@@ -5,8 +5,8 @@
   --dark-text: #ffffff;
 
   /* Light Theme */
-  --light-background: #eae7e7;
-  --light-card-background: #ffffff50;
+  --light-background: #f3f1f1;
+  --light-card-background: #ffffff9d;
   --light-text: #2c2c2c;
 
   /* Default */
@@ -61,6 +61,7 @@
   background-color: #b19cd9;
   color: white;
   border: none;
+  cursor: pointer;
 }
 
 /* small text */
@@ -73,8 +74,43 @@
   margin-right: 1rem;
 }
 
+/* flexbox */
+
+.flexboxCol {
+  display: flex;
+  flex-direction: column;
+}
+
 .container{
   display: grid;
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Anchor */
+a{
+  text-decoration: none;
+  color: #b19cd9;
+}
+
+.purple{
+  color: #b19cd9;
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+  width: 2px;
+}
+
+::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #b19cd9; 
+  border-radius: 10px;
 }
