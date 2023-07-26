@@ -1,25 +1,38 @@
 import { useState } from 'react';
 import './Login.css';
+import { loginUser } from '../api/UserFetchApi';
 
 const Login = (props) => {
 
-    const onClickAnimationHandler = (e) => {
-        console.log()
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const onSubmitHandler = (e) => {
+        e.preventDefault()
+        loginUser(email, password)
+        setEmail('')
+        setPassword('')
     }
 
+    const onEmailChangeHandler = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const onPasswordChangeHandler = (e) => {
+        setPassword(e.target.value)
+    };
 
     return (
         <div className='login-container'>
-            {/* <div className='square'></div>
-            <div className='circle'></div>
-            <div className="triangle"></div> */}
             <div className={`login-card-container ${props.theme}-card`}>
                 <h3 className='login-title'>Sign in to your account</h3>
                 <p>Daily Quiet Time</p>
                 <form className='login-form' action="/landing" method='get'>
-                    <input className={`${props.theme}-input`} type="email" required placeholder='Email'/>
-                    <input className={`${props.theme}-input`} type="password" placeholder='Password' required />
-                    <button onClick={onClickAnimationHandler} className='login-button'>Log in</button>
+                    <input className={`${props.theme}-input`} value={email} 
+                            onChange={onEmailChangeHandler} type="email" required placeholder='Email'/>
+                    <input className={`${props.theme}-input`} value={password}
+                            onChange={onPasswordChangeHandler} type="password" placeholder='Password' required />
+                    <button onClick={onSubmitHandler} className='login-button'>Log in</button>
                 </form>
                 <div className='login-segment'>
                     <span className='line'></span>
