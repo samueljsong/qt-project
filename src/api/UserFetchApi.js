@@ -29,4 +29,8 @@ async function loginUser(email, password){
     console.warn(result);
 }
 
+async function getFriends(email, password){
+    
+}
+
 export {createUser, loginUser};
