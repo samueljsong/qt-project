@@ -2,7 +2,7 @@
     display: flex;
     position: absolute;
     flex-direction: column;
-    height: 500px;
+    height: 320px;
     width: 310px;
     z-index: 8;
     animation: hamburgerBackground 0.3s;
@@ -36,7 +36,7 @@
     outline: none;
     background-color: #ffffff;
     border-radius: 5px;
-    height: 22.5rem;
+    height: 80%;
     width: 90%;
 }
 
