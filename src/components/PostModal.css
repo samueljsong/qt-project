@@ -1,9 +1,7 @@
 .mobile-post-container{
-    position: absolute;
     display: flex;
+    position: absolute;
     flex-direction: column;
-    justify-self: center;
-    margin-top: 5rem;
     height: 500px;
     width: 310px;
     z-index: 8;
@@ -18,8 +16,20 @@
     gap: 1rem;
 }
 
-.post-title{
+.post-title-section{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-title{
+    margin-left: 1rem;
+}
+
+.close-post{
+    margin-right: 1rem;
 }
 
 .post-text-area{

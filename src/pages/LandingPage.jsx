@@ -84,24 +84,25 @@ const LandingPage = (props) => {
     return(
         <>
 
-            <div className={backdropClass} onClick={showMobilePassageHandler}></div>
-                <div className={`${mobilePassageClass} ${props.theme}-card`}>
-                    <p className='bible-verse passage-verse'>{props.passage} 
-                    <span className='flexboxRow'>
-                        <span className='close-button'>
-                            <img className="close-icon" src={post} alt="" />
+            <div className={backdropClass} onClick={showMobilePassageHandler}>
+                    <div className={`${mobilePassageClass} ${props.theme}-card`}>
+                        <p className='bible-verse passage-verse'>{props.passage} 
+                        <span className='flexboxRow'>
+                            <span className='close-button'>
+                                <img className="close-icon" src={post} alt="" />
+                            </span>
+                            <span onClick={showMobilePassageHandler} className='close-button'>
+                                <img className='close-icon' src={close} alt="" />
+                            </span>
                         </span>
-                        <span onClick={showMobilePassageHandler} className='close-button'>
-                            <img className='close-icon' src={close} alt="" />
-                        </span>
-                    </span>
-                    </p>
-                    <div className='flexboxCol verses'>
-                        {
-                            props.passageVerse.map(verse => {
-                                return <p className='small-font' key={crypto.randomUUID()}><span className='purple'>{verse.verse}.</span> {verse.text}</p>
-                            })
-                        }
+                        </p>
+                        <div className='flexboxCol verses'>
+                            {
+                                props.passageVerse.map(verse => {
+                                    return <p className='small-font' key={crypto.randomUUID()}><span className='purple'>{verse.verse}.</span> {verse.text}</p>
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             
