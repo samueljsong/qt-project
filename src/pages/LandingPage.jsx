@@ -5,12 +5,21 @@ import pic2 from '../assets/dfdfd.jpg'
 import pic3 from '../assets/ss.jpg'
 import book from '../assets/nav-icons/whitebook.svg'
 import close from '../assets/nav-icons/whiteclose.svg'
+import post from '../assets/nav-icons/post-icon.svg'
 import { useEffect, useState } from 'react'
+
+
+import PostModal from '../components/PostModal'
 
 const LandingPage = (props) => {
     const [mobilePassageShow, setMobilePassageShow] = useState(false);
     const [backdropClass, setBackdropClass] = useState(`backdrop`)
     const [mobilePassageClass, setMobilePassageClass] = useState(`mobile-passage-container`)
+
+    const [mobilePostShow, setMobilePostShow] = useState(false)
+    const [postBackdropClass, setPostBackdropClass] = useState('invisible');
+    const [mobilePostClass, setMobilePostClass] = useState('invisible')
+    
 
     const showMobilePassageHandler = () => {
         setMobilePassageShow(!mobilePassageShow)
@@ -25,6 +34,20 @@ const LandingPage = (props) => {
             setMobilePassageClass('invisible')
         }
     },[mobilePassageShow])
+
+    const showMobilePostHandler = () => {
+        setMobilePostShow(!mobilePostShow)
+    }
+
+    useEffect(() => {
+        if(mobilePostShow){
+            setPostBackdropClass('backdrop')
+            setMobilePostClass('mobile-post-container')
+        }else{
+            setPostBackdropClass('invisible')
+            setMobilePostClass('invisible')
+        }
+    }, [mobilePostShow])
 
 
     const temporaryData = [
@@ -60,10 +83,18 @@ const LandingPage = (props) => {
 
     return(
         <>
-            <div className={backdropClass} onClick={showMobilePassageHandler}>
+
+            <div className={backdropClass} onClick={showMobilePassageHandler}></div>
                 <div className={`${mobilePassageClass} ${props.theme}-card`}>
                     <p className='bible-verse passage-verse'>{props.passage} 
-                        <span onClick={showMobilePassageHandler} className='close-button'><img className='close-icon' src={close} alt="" /></span>
+                    <span className='flexboxRow'>
+                        <span className='close-button'>
+                            <img className="close-icon" src={post} alt="" />
+                        </span>
+                        <span onClick={showMobilePassageHandler} className='close-button'>
+                            <img className='close-icon' src={close} alt="" />
+                        </span>
+                    </span>
                     </p>
                     <div className='flexboxCol verses'>
                         {
@@ -73,7 +104,13 @@ const LandingPage = (props) => {
                         }
                     </div>
                 </div>
-            </div>
+            
+            
+            <PostModal postBackdropClass={postBackdropClass} 
+            showMobilePostHandler={showMobilePostHandler}
+            mobilePostClass={mobilePostClass} theme={props.theme}
+            passage={props.passage}/>
+
 
             <div className='landing-container'>
 
@@ -90,7 +127,8 @@ const LandingPage = (props) => {
                                 <img className='book-icon' src={book} alt="" />
                             </div>
                         </div>
-                        <button className='button post-button'>Post your thoughts</button>
+                        <button className='button post-button'
+                        onClick={showMobilePostHandler}>Post your thoughts</button>
                     </div>
                     <div className='post-container'>
                         {

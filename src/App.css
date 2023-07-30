@@ -62,6 +62,7 @@
   color: white;
   border: none;
   cursor: pointer;
+  font-size: 0.8rem;
 }
 
 /* small text */
@@ -79,6 +80,11 @@
 .flexboxCol {
   display: flex;
   flex-direction: column;
+}
+
+.flexboxRow {
+  display: flex;
+  flex-direction: row;
 }
 
 .container{
