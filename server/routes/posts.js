@@ -5,4 +5,8 @@ router.route('/').get((req, res) => {
     
 })
 
+router.route('/add').post((req, res) => {
+    
+})
+
 module.exports = router;
