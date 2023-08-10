@@ -9,4 +9,8 @@ router.route('/add').post((req, res) => {
     
 })
 
+router.route('/delete').post((req, res) => {
+    
+})
+
 module.exports = router;
