@@ -8,11 +8,18 @@ router.route('/').get((req, res) => {
     
 })
 
+/**
+ * This request will add a Post to MongoDB
+ */
 router.route('/add').post((req, res) => {
     
 })
 
 router.route('/delete').post((req, res) => {
+    
+})
+
+router.route('/search').get((req, res) => {
     
 })
 
