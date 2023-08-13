@@ -15,6 +15,9 @@ router.route('/add').post((req, res) => {
     
 })
 
+/**
+ * This request will delete a post
+ */
 router.route('/delete').post((req, res) => {
     
 })
