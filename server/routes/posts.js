@@ -22,6 +22,9 @@ router.route('/delete').post((req, res) => {
     
 })
 
+/**
+ * This request will search for a certain post
+ */
 router.route('/search').get((req, res) => {
     
 })
