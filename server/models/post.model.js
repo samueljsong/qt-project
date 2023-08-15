@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
+    userID:{
+        type: String,
+        required: true,
+        
+    }
 
 })
 
