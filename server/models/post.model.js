@@ -6,6 +6,10 @@ const postSchema = new Schema({
         type: String,
         required: true,
         minlength: 1,
+    },
+    bibleVerseTitle:{
+        type: String,
+        required:true,
     }
 
 })
