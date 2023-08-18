@@ -10,6 +10,9 @@ const postSchema = new Schema({
     bibleVerseTitle:{
         type: String,
         required:true,
+    },
+    description:{
+
     }
 
 })
