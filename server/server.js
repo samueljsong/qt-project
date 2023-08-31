@@ -2,6 +2,7 @@ require('dotenv').config();                 // Allows us to use variables in .en
 const express = require("express");         // Using express
 const cors = require("cors");               // Using cors
 const mongoose = require('mongoose')        // Using mongoose
+const session = require('express-session');
 const app = express();                      // Creating app server initializing with express
 const port = process.env.PORT || 5000;      // Port we are running the server
 const uri = process.env.ATLAS_URI;          // The MongoDB key
@@ -15,6 +16,9 @@ connection.once('open', () => {
 
 app.use(cors());                            // Making app server use cors
 app.use(express.json());                    // Making app server use express.json
+app.use(session({
+   
+}))
 
 
 const usersRouter = require('./routes/users');

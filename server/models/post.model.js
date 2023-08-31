@@ -12,7 +12,10 @@ const postSchema = new Schema({
         required:true,
     },
     description:{
-
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 500,
     }
 
 })
