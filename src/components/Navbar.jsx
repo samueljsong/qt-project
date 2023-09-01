@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import './Navbar.css'
+
+//Image imports
 import sun from '../assets/sun.png'
 import moon from '../assets/moon.png'
 import b_signout from '../assets/nav-icons/b-signout.svg'
@@ -12,6 +14,8 @@ import b_about from '../assets/nav-icons/b-about.svg'
 import w_about from '../assets/nav-icons/w-about.svg'
 import b_profile from '../assets/nav-icons/b-pro.svg'
 import w_profile from '../assets/nav-icons/w-profile.svg'
+
+
 
 const Navbar = (props) => {
 
@@ -68,6 +72,8 @@ const Navbar = (props) => {
         }
     },[hamburgerActive])
 
+    //Handlers for Navigation
+
 
     return (
         <>
@@ -80,7 +86,7 @@ const Navbar = (props) => {
                 <div className='flexboxCol hamburger-elements'>
                     <a className={`${props.theme}`} href=""><img className='hamburger-theme-icon' src={homeSvg} alt="" /> Home</a>
                     <a className={`${props.theme}`} href=""><img className='hamburger-theme-icon' src={friendsSvg} alt="" /> Friends</a>
-                    <a className={`${props.theme}`} href=""><img className='hamburger-theme-icon' src={aboutSvg} alt="" /> About</a>
+                    <a className={`${props.theme}`} href="/about"><img className='hamburger-theme-icon' src={aboutSvg} alt="" /> About</a>
                 </div>
                 <div className='hamburger-line'></div>
                 <div className='flexboxCol hamburger-settings'>
@@ -103,7 +109,7 @@ const Navbar = (props) => {
                 <div className='nav-elements'>
                     <div className='nav-element-desktop'><a href="">Home</a></div>
                     <div className='nav-element-desktop'><a href="">Friends</a></div>
-                    <div className='nav-element-desktop'><a href="">About</a></div>
+                    <div className='nav-element-desktop'><a href="/about">About</a></div>
                     <div className='nav-element-desktop'><a href="">Profile</a></div>
                     <img className='change-theme-icon' onClick={onChangeThemeHandler} src={currentImage} alt="" />
                     <button className='button nav-button'>Sign out</button>
