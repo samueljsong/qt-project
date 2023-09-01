@@ -26,10 +26,8 @@ const About = () => {
                         <p className='about-details-3'>
                             Take your time in reading and 
                             reflecting upon it, and post what you learned and felt.
-                            [You can post <b>ONCE</b> a day]</p>
-                        <p className='about-details-4'>
-                            Your post can only be seen by people who are registered as your friend!
                         </p>
+                       
 
                     </div>
                 </div>
