@@ -33,10 +33,19 @@ router.route('/login').post(async (req, res) => {
     const user = await User.findOne({email: email})
     
     if(user){
-        if(user.password === password){
-            res.json('LOGGED IN')
-        }else{
-            res.json("FAIL")
+        if(password === user.password){
+            req.session.userID = user.id;
+            req.session.email = user.email;
+            req.session.isAuth = true;
+            req.session.save();
+            res.status(200).send({
+                status:"success",
+                msg: user.userType,
+                userID: user._id
+            })
+        }
+        else{
+            res.status(401).send("WRONG CREDENTIALS")
         }
     }else{
         res.json("User email not found")

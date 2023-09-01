@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Login.css';
-import { loginUser } from '../api/UserFetchApi';
+import { loginUser } from '../api/Users.api';
 
 const Login = (props) => {
 

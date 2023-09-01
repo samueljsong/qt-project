@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
 import LoginPage from './pages/LoginPage'
 import LandingPage from './pages/LandingPage'
+import About from './pages/About'
 import Navbar from './components/Navbar'
 import { getBible } from './api/Bible'
 
@@ -50,6 +51,7 @@ function App() {
           <Routes>
             <Route path='/' element={<LoginPage theme={mode}/>}/>
             <Route path='/landing' element={<LandingPage theme={mode} passage={passage} passageVerse={passageVerse}/>}/>
+            <Route path='/about' element={<About theme={mode}/>}/>
           </Routes>
         </BrowserRouter>
       </div>

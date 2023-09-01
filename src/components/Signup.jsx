@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Signup.css'
-import { createUser } from '../api/UserFetchApi'
+import { createUser } from '../api/Users.api'
 
 const Signup = (props) => {
 
@@ -20,7 +20,7 @@ const Signup = (props) => {
         setPassword(e.target.value);
     }
 
-    const handleOnSubmit = async (e) => {
+    const handleOnSubmit = (e) => {
         e.preventDefault();
         createUser(username, email, password);
         setUsername('')
