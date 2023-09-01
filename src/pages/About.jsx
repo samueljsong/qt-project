@@ -1,4 +1,9 @@
-import './About.css'
+import './About.css';
+import github from '../assets/plug-icons/github.png';
+import codepen from '../assets/plug-icons/codepen.png';
+import linkedin from '../assets/plug-icons/linkedin.png';
+import insta from '../assets/plug-icons/instagram.png';
+import frog from '../assets/frog.jpg';
 
 const About = () => {
 
@@ -20,7 +25,8 @@ const About = () => {
                         </p>
                         <p className='about-details-3'>
                             Take your time in reading and 
-                            reflecting upon it, and post what you learned and felt.</p>
+                            reflecting upon it, and post what you learned and felt.
+                            [You can post <b>ONCE</b> a day]</p>
                         <p className='about-details-4'>
                             Your post can only be seen by people who are registered as your friend!
                         </p>
@@ -29,12 +35,34 @@ const About = () => {
                 </div>
 
 
-                <div className='about-dev-container'>
-                    <div className="about-dev-top-section">
+                <div className='about-container2'>
+                    <div className='about-top-section2'>
                         <span className='about-line'></span>
                         <h1 className='about-dev-title'>Samuel</h1>
                     </div>
+
+                    <div className='about-dev-details'>
+                        <p className="about-dev-details1">
+                            Hi, my name is Samuel Song and I enjoy creating things that live on the internet.
+                        </p>
+                        <div className="img-box">
+                            <span className='purple-box'></span>
+                            <img className='about-image' src={frog} alt="" />
+                        </div>
+
+                        <div className='plugs'>
+                            <span className='about-line'></span>
+                            <div className='plugs-icon-container'>
+                                <a href=""><img class='plug-icon' src={github} alt="" /></a>
+                                <a href=""><img class='plug-icon' src={codepen} alt="" /></a>
+                                <a href=""><img class='plug-icon' src={linkedin} alt="" /></a>
+                                <a href=""><img class='plug-icon' src={insta} alt="" /></a>
+                            </div>
+                            <span className='about-line'></span>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </>
     )
