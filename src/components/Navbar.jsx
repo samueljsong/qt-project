@@ -90,7 +90,7 @@ const Navbar = (props) => {
                 </div>
                 <div className='hamburger-line'></div>
                 <div className='flexboxCol hamburger-settings'>
-                    <a className={`${props.theme}`} href=""><img className='hamburger-theme-icon' src={profileSvg} alt="" /> Profile</a>
+                    <a className={`${props.theme}`} href="/profile"><img className='hamburger-theme-icon' src={profileSvg} alt="" /> Profile</a>
                     <div className={`${props.theme}`} onClick={onChangeThemeHandler}>
                         <img className='hamburger-theme-icon' src={currentImage} alt='nothing' /> Mode
                     </div>

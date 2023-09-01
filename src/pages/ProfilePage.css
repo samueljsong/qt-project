@@ -1,0 +1,86 @@
+.profile-general-container{
+    display: grid;
+    height: auto;
+    place-items: center;
+}
+
+.profile-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    gap: 1rem;
+}
+
+.profile-info-section{
+    width: 90%;
+    margin-top: 5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.profile-picture{
+    width: 5rem;
+    border-radius: 50%;
+}
+
+.profile-text-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+.profile-name{
+    color: #b19cd9;
+}
+
+.profile-stats{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.profile-posts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-friends{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-edit-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.profile-edit-button{
+    width: 100%;
+    border: solid 1px #b19cd9;
+    background: none;
+    display: grid;
+    place-items: center;
+    height: 1.5rem;
+    border-radius: 5px;
+}
+
+.profile-friends-button{
+    background: none;
+    width: 100%;
+    border: solid 1px #b19cd9;
+    display: grid;
+    place-items: center;
+    height: 1.5rem;
+    border-radius: 5px;
+}
+
+.profile-posts-container{
+
+}
