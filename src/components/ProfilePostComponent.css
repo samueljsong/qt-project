@@ -1,0 +1,10 @@
+.profile-post-container{
+    width: 32%;
+    display: grid;
+    place-items: center;
+    height: 6rem;
+    border: solid 1px #b19cd9;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    cursor: pointer;
+}

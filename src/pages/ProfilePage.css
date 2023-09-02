@@ -13,7 +13,7 @@
 }
 
 .profile-info-section{
-    width: 90%;
+    width: 100%;
     margin-top: 5rem;
     display: flex;
     gap: 1rem;
@@ -39,7 +39,8 @@
 .profile-stats{
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 3rem;
 }
 
 .profile-posts{
@@ -69,6 +70,7 @@
     place-items: center;
     height: 1.5rem;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .profile-friends-button{
@@ -79,8 +81,12 @@
     place-items: center;
     height: 1.5rem;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .profile-posts-container{
-
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
