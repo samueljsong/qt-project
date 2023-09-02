@@ -1,6 +1,8 @@
 import './ProfilePage.css';
 import profilepic from '../assets/ss.jpg';
 import ProfilePostComponent from '../components/ProfilePostComponent';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 const ProfilePage = (props) => {
 
@@ -43,7 +45,7 @@ const ProfilePage = (props) => {
         }
     ]
 
-
+    const {mode, setMode} = useContext(ThemeContext);
     
     return(
         <>
@@ -73,8 +75,8 @@ const ProfilePage = (props) => {
                     </div>
 
                     <div className='profile-edit-container'>
-                        <div className={`profile-edit-button ${props.theme}-card`}><p className='small-font'>Edit profile</p></div>
-                        <div className={`profile-friends-button ${props.theme}-card`}><p className='small-font'>Friends list</p></div>
+                        <div className={`profile-edit-button ${mode}-card`}><p className='small-font'>Edit profile</p></div>
+                        <div className={`profile-friends-button ${mode}-card`}><p className='small-font'>Friends list</p></div>
                     </div>
 
                     <div className='about-line profile-line'></div>

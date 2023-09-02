@@ -6,12 +6,15 @@ import pic3 from '../assets/ss.jpg'
 import book from '../assets/nav-icons/whitebook.svg'
 import close from '../assets/nav-icons/whiteclose.svg'
 import post from '../assets/nav-icons/post-icon.svg'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 
 import PostModal from '../components/PostModal'
+import { ThemeContext } from '../context/ThemeContext'
 
 const LandingPage = (props) => {
+    const {mode, setMode} = useContext(ThemeContext)
+
     const [mobilePassageShow, setMobilePassageShow] = useState(false);
     const [backdropClass, setBackdropClass] = useState(`backdrop`)
     const [mobilePassageClass, setMobilePassageClass] = useState(`mobile-passage-container`)
@@ -85,7 +88,7 @@ const LandingPage = (props) => {
         <>
 
             <div className={backdropClass} onClick={showMobilePassageHandler}>
-                    <div className={`${mobilePassageClass} ${props.theme}-card`}>
+                    <div className={`${mobilePassageClass} ${mode}-card`}>
                         <p className='bible-verse passage-verse'>{props.passage} 
                         <span className='flexboxRow'>
                             <span className='close-button'>
@@ -109,13 +112,13 @@ const LandingPage = (props) => {
             
             <PostModal postBackdropClass={postBackdropClass} 
             showMobilePostHandler={showMobilePostHandler}
-            mobilePostClass={mobilePostClass} theme={props.theme}
+            mobilePostClass={mobilePostClass} theme={mode}
             passage={props.passage}/>
 
 
             <div className='landing-container'>
 
-                <div className={`profile-section ${props.theme}-card`}>
+                <div className={`profile-section ${mode}-card`}>
                     
                 </div>
                 
@@ -134,7 +137,7 @@ const LandingPage = (props) => {
                     <div className='post-container'>
                         {
                             temporaryData.map(post => {
-                                return <PostCard theme={props.theme} user={post.user} 
+                                return <PostCard theme={mode} user={post.user} 
                                         timePosted={post.timePosted} message={post.message}
                                         post={post.post} pic={post.pic} key={crypto.randomUUID()}/>
                             })
@@ -142,7 +145,7 @@ const LandingPage = (props) => {
                     </div>
                 </div>
 
-                <div className={`passage-section ${props.theme}-card`}>
+                <div className={`passage-section ${mode}-card`}>
                     <p className='bible-verse'>{props.passage}</p>
                     <div className='flexboxCol verses'>
                         {
@@ -150,7 +153,7 @@ const LandingPage = (props) => {
                                 return <p className='small-font' key={crypto.randomUUID()}><span className='purple'>{verse.verse}.</span> {verse.text}</p>
                             })
                         }
-                    </div>
+                    </div>  
                 </div>
             </div>
         </>

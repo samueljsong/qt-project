@@ -14,6 +14,7 @@ import b_about from '../assets/nav-icons/b-about.svg'
 import w_about from '../assets/nav-icons/w-about.svg'
 import b_profile from '../assets/nav-icons/b-pro.svg'
 import w_profile from '../assets/nav-icons/w-profile.svg'
+import { Link } from 'react-router-dom'
 
 
 
@@ -84,17 +85,17 @@ const Navbar = (props) => {
                     <h1 className='hamburger-logo'>QuTi</h1>
                 </div>
                 <div className='flexboxCol hamburger-elements'>
-                    <a className={`${props.theme} small-font test`} href=""><img className='hamburger-theme-icon' src={homeSvg} alt="" /> Home</a>
-                    <a className={`${props.theme} small-font`} href=""><img className='hamburger-theme-icon' src={friendsSvg} alt="" /> Friends</a>
-                    <a className={`${props.theme} small-font`} href="/about"><img className='hamburger-theme-icon' src={aboutSvg} alt="" /> About</a>
+                    <Link className={`${props.theme} small-font test`} to=""><img className='hamburger-theme-icon' src={homeSvg} alt="" /> Home</Link>
+                    <Link className={`${props.theme} small-font`} to=""><img className='hamburger-theme-icon' src={friendsSvg} alt="" /> Friends</Link>
+                    <Link className={`${props.theme} small-font`} to="/about"><img className='hamburger-theme-icon' src={aboutSvg} alt="" /> About</Link>
                 </div>
                 <div className='hamburger-line'></div>
                 <div className='flexboxCol hamburger-settings'>
-                    <a className={`${props.theme} small-font`} href="/profile"><img className='hamburger-theme-icon' src={profileSvg} alt="" /> Profile</a>
+                    <Link className={`${props.theme} small-font`} to="/profile"><img className='hamburger-theme-icon' src={profileSvg} alt="" /> Profile</Link>
                     <div className={`${props.theme} small-font`} onClick={onChangeThemeHandler}>
                         <img className='hamburger-theme-icon' src={currentImage} alt='nothing' /> Mode
                     </div>
-                    <a className={`${props.theme} small-font`} href=""><img className='hamburger-theme-icon' src={signoutSvg} alt="" /> Sign out</a>
+                    <Link className={`${props.theme} small-font`} to=""><img className='hamburger-theme-icon' src={signoutSvg} alt="" /> Sign out</Link>
                 </div>
             </div>
 
@@ -107,10 +108,10 @@ const Navbar = (props) => {
                     <span className='nav-line'></span>
                 </div>
                 <div className='nav-elements'>
-                    <div className='nav-element-desktop'><a href=""><p className='small-font'>Home</p></a></div>
-                    <div className='nav-element-desktop'><a href=""><p className='small-font'>Friends</p></a></div>
-                    <div className='nav-element-desktop'><a href="/about"><p className='small-font'>About</p></a></div>
-                    <div className='nav-element-desktop'><a href=""><p className='small-font'>Profile</p></a></div>
+                    <div className='nav-element-desktop'><Link to=""><p className='small-font'>Home</p></Link></div>
+                    <div className='nav-element-desktop'><Link to=""><p className='small-font'>Friends</p></Link></div>
+                    <div className='nav-element-desktop'><Link to="/about"><p className='small-font'>About</p></Link></div>
+                    <div className='nav-element-desktop'><Link to=""><p className='small-font'>Profile</p></Link></div>
                     <img className='change-theme-icon' onClick={onChangeThemeHandler} src={currentImage} alt="" />
                     <button className='button nav-button'>Sign out</button>
                 </div>

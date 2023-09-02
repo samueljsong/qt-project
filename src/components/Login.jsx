@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './Login.css';
 import { loginUser } from '../api/Users.api';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Login = (props) => {
-
+    const {mode, setMode} = useContext(ThemeContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -24,13 +25,13 @@ const Login = (props) => {
 
     return (
         <div className='login-container'>
-            <div className={`login-card-container ${props.theme}-card`}>
+            <div className={`login-card-container ${mode}-card`}>
                 <h3 className='login-title'>Sign in to your account</h3>
                 <p>Daily Quiet Time</p>
                 <form className='login-form' action="/landing" method='get'>
-                    <input className={`${props.theme}-input`} value={email} 
+                    <input className={`${mode}-input`} value={email} 
                             onChange={onEmailChangeHandler} type="email" required placeholder='Email'/>
-                    <input className={`${props.theme}-input`} value={password}
+                    <input className={`${mode}-input`} value={password}
                             onChange={onPasswordChangeHandler} type="password" placeholder='Password' required />
                     <button onClick={onSubmitHandler} className='login-button'>Log in</button>
                 </form>

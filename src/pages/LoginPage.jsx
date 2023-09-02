@@ -1,11 +1,12 @@
 import "./LoginPage.css"
 import Login from "../components/Login";
 import Signup from "../components/Signup";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const LoginPage = (props) => {
-
-    const [loginPage, setLoginPage] = useState(true)
+    const {mode, setMode} = useContext(ThemeContext);
+    const [loginPage, setLoginPage] = useState(true);
 
     const switchLoginSignupHandler = () => {
         setLoginPage(!loginPage)
@@ -16,8 +17,8 @@ const LoginPage = (props) => {
         <div className={`login-page-container`}>
             {   // Doing a conditional rendering of components.
                 loginPage
-                ? <Login theme={props.theme} switchToSignup={switchLoginSignupHandler}></Login> 
-                : <Signup theme={props.theme} switchToLogin={switchLoginSignupHandler}></Signup>
+                ? <Login switchToSignup={switchLoginSignupHandler}></Login> 
+                : <Signup switchToLogin={switchLoginSignupHandler}></Signup>
             }
         </div>
         

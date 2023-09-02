@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './Signup.css'
 import { createUser } from '../api/Users.api'
+import { ThemeContext } from '../context/ThemeContext'
 
 const Signup = (props) => {
-
+    const {mode, useMode} = useContext(ThemeContext);
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -30,24 +31,24 @@ const Signup = (props) => {
 
     return (
         <div className='login-container'>
-            <div className={`signup-card-container ${props.theme}-card`}>
+            <div className={`signup-card-container ${mode}-card`}>
                 <h3 className='login-title'>Create an account</h3>
                 <p>Daily Quiet Time</p>
 
                 <form className='login-form' action="">
                     <label htmlFor="username">Username</label>
                     <input onChange={handleUsernameChangeHandler} value={username} 
-                            id='username' className={`${props.theme}-input`} 
+                            id='username' className={`${mode}-input`} 
                             type="text" placeholder='Username' required/>
 
                     <label htmlFor="email">Email</label>
                     <input onChange={handleEmailChangeHandler} value={email} 
-                            id='email' className={`${props.theme}-input`} 
+                            id='email' className={`${mode}-input`} 
                             type="email" required placeholder='Email'/>
 
                     <label htmlFor="password">Password</label>
                     <input onChange={handlePasswordChangeHandler} value={password} 
-                            id='password' className={`${props.theme}-input`} 
+                            id='password' className={`${mode}-input`} 
                             type="password" placeholder='Password' required />
                             
                     <button onClick={handleOnSubmit} className='button signup-button'>Sign up</button>

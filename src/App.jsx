@@ -8,6 +8,8 @@ import Navbar from './components/Navbar'
 import { getBible } from './api/Bible'
 import ProfilePage from './pages/ProfilePage'
 
+import { ThemeContext } from './context/ThemeContext'
+
 function App() {
 
   /* STATES */
@@ -15,6 +17,7 @@ function App() {
   const [isDark, setDarkMode] = useState(true);
   const [passage, setPassage] = useState("");
   const [passageVerse, setPassageVerse] = useState([]);
+  const [isAuth, setIsAuth] = useState('')
 
   /* Makes sure that background is always there */
   const changeBodyBackground = () => {
@@ -48,14 +51,16 @@ function App() {
     <>
       <div className={`container ${mode}`}>
         <Navbar theme={mode} changeTheme={themeHandler}></Navbar>
-        <BrowserRouter>
+
+        <ThemeContext.Provider value={{mode, setMode}}>
           <Routes>
-            <Route path='/' element={<LoginPage theme={mode}/>}/>
-            <Route path='/landing' element={<LandingPage theme={mode} passage={passage} passageVerse={passageVerse}/>}/>
-            <Route path='/about' element={<About theme={mode}/>}/>
-            <Route path='/profile' element={<ProfilePage theme={mode}/>}/>
+            <Route path='/' element={<LoginPage />}/>
+            <Route path='/landing' element={<LandingPage passage={passage} passageVerse={passageVerse}/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/profile' element={<ProfilePage/>}/>
           </Routes>
-        </BrowserRouter>
+        </ThemeContext.Provider>
+        
       </div>
     </>
   )
