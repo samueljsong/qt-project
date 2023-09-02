@@ -4,7 +4,7 @@ const ProfilePostComponent = (props) => {
 
     return(
         <>
-            <div className='profile-post-container small-font'>
+            <div className={`profile-post-container small-font ${props.theme}-card`}>
                 {props.title}
             </div>
         </>

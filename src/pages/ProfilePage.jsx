@@ -2,7 +2,7 @@ import './ProfilePage.css';
 import profilepic from '../assets/ss.jpg';
 import ProfilePostComponent from '../components/ProfilePostComponent';
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
 
     const dummy_posts = [
         {
@@ -73,16 +73,16 @@ const ProfilePage = () => {
                     </div>
 
                     <div className='profile-edit-container'>
-                        <div className='profile-edit-button'><p className='small-font'>Edit profile</p></div>
-                        <div className='profile-friends-button'><p className='small-font'>Friends list</p></div>
+                        <div className={`profile-edit-button ${props.theme}-card`}><p className='small-font'>Edit profile</p></div>
+                        <div className={`profile-friends-button ${props.theme}-card`}><p className='small-font'>Friends list</p></div>
                     </div>
 
                     
-                    <h4>Posts</h4>
+                    <p className='small-font profile-post-title'>Posts</p>
                     <div className='profile-posts-container'>
                         {
                             dummy_posts.map(post => {
-                                return <ProfilePostComponent key={post.postID} title={post.bibleVerseTitle}/>
+                                return <ProfilePostComponent key={post.postID} title={post.bibleVerseTitle} theme={props.theme}/>
                             })
                         }
                     </div>
