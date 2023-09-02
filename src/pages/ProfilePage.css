@@ -80,6 +80,10 @@
     cursor: pointer;
 }
 
+.profile-line{
+    width: 100%;
+}
+
 .profile-post-title{
     margin-top: 1rem;
 }

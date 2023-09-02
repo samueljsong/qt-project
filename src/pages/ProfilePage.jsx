@@ -77,6 +77,7 @@ const ProfilePage = (props) => {
                         <div className={`profile-friends-button ${props.theme}-card`}><p className='small-font'>Friends list</p></div>
                     </div>
 
+                    <div className='about-line profile-line'></div>
                     
                     <p className='small-font profile-post-title'>Posts</p>
                     <div className='profile-posts-container'>
